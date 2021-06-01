@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <title>geolocation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <h2>this is a geolocation api example</h2>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <div id="demo2"></div>
+    <canvas id="chart" width="400" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('chart').getContext('2d');
+        var xlabels=[];
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels:xlabels ,
+        datasets: [{
+            label: 'global average temperatures',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+        var x =document.getElementById('demo');
+        var y =document.getElementById('demo1');
+        var z;
+
+        
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showposition);
+        }
+        else{
+            x.innerHTML="you have not allowed to give position"
+
+        }
+        function showposition(position){
+            let latitude= position.coords.latitude;
+            let longitude=position.coords.longitude;
+            x.innerHTML="<h3>latitude  is:</h3>"+latitude+"<h3>longitude  is:</h3>"+longitude;
+            getWeather(latitude,longitude);
+            let maps="https://apis.mapmyindia.com/advancedmaps/v1/j5deuf5gyjryz3stkbxkkhpb77gwzr3u/still_image?center=15.91289980000002,79.7399875&zoom=15&size=400x400&ssf=1&markers=15.91289980000002,79.7399875";
+            document.getElementById('demo2').innerHTML="<img src="+maps+">";
+        }
+        function getWeather(latitude,longitude){
+            let lat=latitude;
+            let lon=longitude;
+            let api="http://api.openweathermap.org/data/2.5/weather?lat=15.91289980000002&lon=79.7399875&appid=9c6288db5d15e4970ef7b6cd853441c4";
+            fetch(api).then(function(response){let data= response.json();
+                                                            return data;}).then(function(data){z= data.main.temp;}).then(function(){
+                                                                 xlabels.push(z);
+                                                                displayweather();
+                                                    
+                                                            })
+            function displayweather(){
+                y.innerHTML="the temperature is :"+z;
+
+            }                                                
+        
+        }
+       
+    </script>
+
+</body>
