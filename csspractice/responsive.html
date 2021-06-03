@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+         <title>using responsive concept</title>
+         <style>
+             *{
+                 margin: 0%;
+                 padding: 0%;
+                 box-sizing: border-box;
+             }
+             #maindiv{
+                 display: grid;
+                 grid-template-columns: auto auto auto auto;
+                 row-gap: 10px;
+                 margin-top: 10px;
+                 margin-bottom: 10px;    
+             }
+             #maindiv >div{
+                 width: 330px;
+                 height: 300px; 
+             }
+             #maindiv div{
+                 
+                 width: 330px;
+                 height: auto;
+                background-color: aquamarine;
+                line-height: 35px;
+             }
+             #maindiv div h2{
+                 margin-left: 10px;
+             }
+
+             @media screen and (max-width:680px){
+                 #maindiv{
+                     display: grid;
+                     grid-template-columns: auto auto;
+                 }
+
+             }
+             @media screen and (max-width:520px){
+                 #maindiv{
+                     display: grid;
+                     grid-template-columns: auto;
+                 }
+
+             }
+              
+            
+           
+           
+
+         </style>
+     </head>
+     <body>
+         <div id="maindiv">
+              <div id="div1">
+                  <img src="/images/1stimage.jpg" alt="an image" height="300px" width="330px">
+                  <div><h2>A beautiful place from nepal in the himalayas.</h2></div>
+              </div>
+              <div id="div2">
+                <img src="/images/2ndimage.jpg" alt="an image" height="300px" width="330px">
+                <div><h2>A picture showing how the thunder really comes to earth.</h2></div>
+            </div>
+            <div id="div3">
+                <img src="/images/3rdimage.jpg" alt="an image" height="300px" width="330px">
+                <div><h2>A valcano eruption  picture captured at hawaiian island</h2></div>
+            </div>
+            <div id="div4">
+                <img src="/images/4thimage.jpg" alt="an image" height="300px" width="330px">
+                <div><h2>A fish relaxing in the sea got captured under the water.</h2></div>
+            </div>
+            <div id="div5">
+                <img src="/images/5thimage.jpg" alt="an image" height="300px" width="330px">
+                <div><h2>A rare picture of rainbow forming an arc like shape.</h2></div>
+            </div>
+            <div id="div6">
+                <img src="/images/6thimage.jpg" alt="an image" height="300px" width="330px">
+                <div><h2> A picture of snow mountains in the himalaya mountains.</h2></div>
+            </div>
+            <div id="div7">
+                <img src="/images/7thimage.jpg" alt="an image" height="300px" width="330px">
+                <div><h2> A picture of the land egypt which has the thunder at back.</h2></div>
+            </div>
+            <div id="div8">
+                <img src="/images/8thimage.jpg" alt="an image" height="300px" width="330px">
+                <div><h2> we have come to an end.&#128522</h2></div>
+            </div>
+         </div>
+
+     </body>
+ </html>
