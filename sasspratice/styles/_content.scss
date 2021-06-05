@@ -1,0 +1,24 @@
+@import 'colors';
+@import 'navbar';
+
+$height: 510px;
+$width: 1320px;
+ 
+    h2{
+        color:  $color;
+        text-align: center;
+        @include fontdes;
+        padding: 10px;
+        text-transform: uppercase;
+        }
+    .main{
+        margin: 0 15px;
+        height: $height;
+        width: $width;
+       
+        iframe{
+            height: $height;
+            width: $width;
+        }
+    }
+
