@@ -1,0 +1,67 @@
+*{ 
+    margin: 0;
+    padding: 0%;
+}
+#div1{
+     text-align: center;
+     background-color: aqua;
+     width: 1200px;
+     margin: 30px 30px auto 80px;
+}
+#div3{
+    margin: 30px;
+}
+label{ 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+#div2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+input{
+    height: 30px;
+    width: 400px;
+    margin:10px 0 20px 10px;
+}
+i{
+    background-color: aqua;
+    color:orange;
+    height: 30px;
+    transform:translate(-44px,6px)
+}
+
+
+#div4 div h2{
+    display: inline-block;
+    width: 400px;
+    background-color: white;
+    transform: translate(-6px);
+    cursor: pointer;
+    height: 30px;
+}
+#div4 div{
+    margin-bottom: 20px;
+
+}
+#div4 div span{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 32px;
+    transform: translate(-33px,10px);
+    cursor: pointer;
+}
+ .todoitem{
+    color: blue;
+   
+
+}
+
+ i.fa-trash-o{
+     height: 30px;
+     font-size: 26px;
+     transform: translate(-28px,1px);
+     background-color: white;
+     cursor: pointer;
+}
