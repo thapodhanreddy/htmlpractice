@@ -1,0 +1,13 @@
+*{
+    color: aqua;
+}
+button{
+    cursor: pointer;
+}
+h2{
+    display: inline;
+}
+h1{
+    display: flex;
+    color: gold;
+}
